@@ -198,4 +198,297 @@
               <div class="example-item">
                 <span class="ex-prob">(-2)<sup>3</sup></span>
                 <span class="ex-arrow">→</span>
-                <span class
+                <span class="ex-calc">(-2)×(-2)×(-2)</span>
+                <span class="ex-ans">= -8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="materi-card card-negative fade-in">
+          <div class="card-header">
+            <div class="card-badge">Kondisi 3</div>
+            <div class="card-icon">➖</div>
+          </div>
+          <h3 class="card-title">Pangkat Negatif</h3>
+          <div class="card-formula">a<sup>-n</sup> = 1 / a<sup>n</sup></div>
+          <div class="card-condition">
+            <span class="condition-label">Syarat:</span> n &lt; 0
+          </div>
+          <p class="card-desc">
+            Apabila pangkat <em>n</em> bernilai negatif, maka hasilnya diubah menjadi bentuk <strong>pecahan</strong>: pembilang 1 dibagi hasil perpangkatan positifnya.
+          </p>
+          <div class="card-examples">
+            <div class="example-title">✦ Contoh Soal</div>
+            <div class="example-list">
+              <div class="example-item col">
+                <span class="ex-prob">2<sup>-3</sup></span>
+                <span class="ex-steps">= 1/2<sup>3</sup> = 1/(2×2×2) = 1/8</span>
+                <span class="ex-ans">= 0.125</span>
+              </div>
+              <div class="example-item col">
+                <span class="ex-prob">3<sup>-2</sup></span>
+                <span class="ex-steps">= 1/3<sup>2</sup> = 1/(3×3) = 1/9</span>
+                <span class="ex-ans">≈ 0.111</span>
+              </div>
+              <div class="example-item col">
+                <span class="ex-prob">5<sup>-1</sup></span>
+                <span class="ex-steps">= 1/5<sup>1</sup> = 1/5</span>
+                <span class="ex-ans">= 0.2</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-note">
+            ⚠️ Catatan: Jika basis a = 0, maka 0<sup>-n</sup> tidak terdefinisi
+          </div>
+        </div>
+
+      </div><div class="summary-table-wrap fade-in">
+        <div class="summary-title">📊 Ringkasan Kondisi Fungsi Eksponensial</div>
+        <div class="table-scroll">
+          <table class="summary-table">
+            <thead>
+              <tr>
+                <th>Kondisi</th>
+                <th>Syarat</th>
+                <th>Rumus</th>
+                <th>Contoh</th>
+                <th>Hasil</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge-zero">Pangkat Nol</span></td>
+                <td>n = 0</td>
+                <td>a<sup>0</sup> = 1</td>
+                <td>5<sup>0</sup></td>
+                <td class="result-cell">1</td>
+              </tr>
+              <tr>
+                <td><span class="badge-pos">Pangkat Positif</span></td>
+                <td>n &gt; 0</td>
+                <td>a × a × … (n kali)</td>
+                <td>2<sup>4</sup></td>
+                <td class="result-cell">16</td>
+              </tr>
+              <tr>
+                <td><span class="badge-neg">Pangkat Negatif</span></td>
+                <td>n &lt; 0</td>
+                <td>1 / a<sup>|n|</sup></td>
+                <td>2<sup>-3</sup></td>
+                <td class="result-cell">0.125</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section kalkulator-section" id="kalkulator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">🧮 Kalkulator</span>
+        <h2 class="section-title">Eksponensial Calculator</h2>
+        <p class="section-desc">Masukkan bilangan basis dan pangkat, lalu lihat langkah penyelesaian secara otomatis.</p>
+      </div>
+
+      <div class="calc-wrapper">
+        <div class="calc-card">
+          <div class="calc-inputs">
+            <div class="input-group">
+              <label for="inputBasis" class="input-label">
+                <span class="label-icon">🔢</span>
+                Bilangan Basis (a)
+              </label>
+              <input type="number" id="inputBasis" class="calc-input" placeholder="Contoh: 2" step="any" />
+            </div>
+            <div class="input-divider">
+              <span class="divider-text">^</span>
+            </div>
+            <div class="input-group">
+              <label for="inputPangkat" class="input-label">
+                <span class="label-icon">🔼</span>
+                Nilai Pangkat (n)
+              </label>
+              <input type="number" id="inputPangkat" class="calc-input" placeholder="Contoh: 3" step="1" />
+            </div>
+          </div>
+
+          <button class="btn-hitung" id="btnHitung">
+            <span class="btn-icon">⚡</span>
+            Hitung Penyelesaian
+          </button>
+
+          <div class="calc-output" id="calcOutput">
+            <div class="output-placeholder">
+              <div class="placeholder-icon">📐</div>
+              <p>Masukkan nilai basis dan pangkat, lalu tekan tombol <strong>Hitung Penyelesaian</strong> untuk melihat langkah-langkah perhitungan.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="quick-examples">
+          <div class="qe-title">💡 Coba Contoh Cepat</div>
+          <div class="qe-grid">
+            <button class="qe-btn" data-basis="2" data-pangkat="3">2<sup>3</sup></button>
+            <button class="qe-btn" data-basis="3" data-pangkat="4">3<sup>4</sup></button>
+            <button class="qe-btn" data-basis="5" data-pangkat="0">5<sup>0</sup></button>
+            <button class="qe-btn" data-basis="2" data-pangkat="-3">2<sup>-3</sup></button>
+            <button class="qe-btn" data-basis="4" data-pangkat="-2">4<sup>-2</sup></button>
+            <button class="qe-btn" data-basis="-2" data-pangkat="4">(-2)<sup>4</sup></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">ε</span>
+        <span class="footer-name">ExpoMath</span>
+      </div>
+      <p class="footer-text">
+        © 2026 ExpoMath — Dibuat oleh <strong>Muhammad Erzan Divana Herman</strong>.<br/>
+        Media Pembelajaran Fungsi Eksponensial Matematika Diskrit.
+      </p>
+      <div class="footer-tags">
+        <span>#MatematikaDiskrit</span>
+        <span>#FungsiEksponensial</span>
+        <span>#MediaPembelajaran</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Ambil Elemen DOM Utama
+    const inputBasis = document.getElementById('inputBasis');
+    const inputPangkat = document.getElementById('inputPangkat');
+    const btnHitung = document.getElementById('btnHitung');
+    const calcOutput = document.getElementById('calcOutput');
+
+    // Fungsi Utama Perhitungan Eksponensial
+    function jalankanHitung() {
+      const basis = parseFloat(inputBasis.value);
+      const pangkat = parseInt(inputPangkat.value);
+
+      // Proteksi Validasi Jika Input Kosong
+      if (isNaN(basis) || isNaN(pangkat)) {
+        calcOutput.innerHTML = `
+          <div style="color: #ef4444; padding: 15px; background: #fee2e2; border-left: 4px solid #ef4444; border-radius: 6px; font-weight: 500;">
+            ⚠️ Gagal: Mohon masukkan angka bilangan basis (a) dan nilai pangkat (n) terlebih dahulu!
+          </div>`;
+        return;
+      }
+
+      // Proteksi Kasus Khusus Matematika 0 pangkat 0 dan 0 pangkat negatif
+      if (basis === 0 && pangkat === 0) {
+        calcOutput.innerHTML = `
+          <div style="color: #b45309; padding: 15px; background: #fef3c7; border-left: 4px solid #d97706; border-radius: 6px;">
+            <strong>Hasil: Tidak Terdefinisi</strong><br/>
+            <p style="margin-top: 5px; font-size: 14px;">Dalam matematika, nilai dari 0<sup>0</sup> termasuk bentuk tak tentu (indeterminate form).</p>
+          </div>`;
+        return;
+      }
+      if (basis === 0 && pangkat < 0) {
+        calcOutput.innerHTML = `
+          <div style="color: #ef4444; padding: 15px; background: #fee2e2; border-left: 4px solid #ef4444; border-radius: 6px;">
+            <strong>Hasil: Error (Infinity)</strong><br/>
+            <p style="margin-top: 5px; font-size: 14px;">Pangkat negatif dari nol menghasilkan pembagian dengan nol (1 / 0<sup>n</sup>) yang nilainya tidak terdefinisi/tak hingga.</p>
+          </div>`;
+        return;
+      }
+
+      let hasil = 1;
+      let langkahTeks = '';
+      let formatKondisi = '';
+
+      // KONDISI 1: Pangkat Nol (n = 0)
+      if (pangkat === 0) {
+        hasil = 1;
+        formatKondisi = '<span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;">Kondisi 1: Pangkat Nol</span>';
+        langkahTeks = `Berdasarkan sifat aksioma fungsi eksponensial, setiap bilangan bukan nol yang dipangkatkan dengan 0 akan selalu menghasilkan nilai <strong>1</strong>.<br/><br/>
+        $$\\Rightarrow ${basis}^{0} = 1$$`;
+      } 
+      // KONDISI 2: Pangkat Positif (n > 0)
+      else if (pangkat > 0) {
+        let perkalianArray = [];
+        for (let i = 0; i < pangkat; i++) {
+          hasil *= basis;
+          perkalianArray.push(basis < 0 ? `(${basis})` : basis);
+        }
+        formatKondisi = '<span style="background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;">Kondisi 2: Pangkat Positif</span>';
+        langkahTeks = `Mengalikan bilangan basis <strong>${basis}</strong> sebanyak <strong>${pangkat}</strong> kali secara berulang:<br/><br/>
+        $$= ${perkalianArray.join(' \\times ')}$$<br/>
+        $$= ${hasil}$$`;
+      } 
+      // KONDISI 3: Pangkat Negatif (n < 0)
+      else {
+        let pangkatPositif = Math.abs(pangkat);
+        let perkalianArray = [];
+        let hasilPenyebut = 1;
+        for (let i = 0; i < pangkatPositif; i++) {
+          hasilPenyebut *= basis;
+          perkalianArray.push(basis < 0 ? `(${basis})` : basis);
+        }
+        hasil = 1 / hasilPenyebut;
+        
+        // Membatasi digit desimal jika angkanya sangat panjang
+        let hasilTampil = hasil % 1 !== 0 ? hasil.toFixed(4) : hasil;
+
+        formatKondisi = '<span style="background: #ffeeec; color: #e11d48; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;">Kondisi 3: Pangkat Negatif</span>';
+        langkahTeks = `Menggunakan rumus sifat pangkat negatif $$a^{-n} = \\frac{1}{a^n}$$<br/>
+        $$${basis}^{${pangkat}} = \\frac{1}{${basis}^{${pangkatPositif}}}$$<br/>
+        $$= \\frac{1}{${perkalianArray.join(' \\times ')}}$$<br/>
+        $$= \\frac{1}{${hasilPenyebut}}$$<br/>
+        $$= ${hasilTampil}$$`;
+      }
+
+      // Cetak Template Hasil Akhir Estetik ke Box Output
+      calcOutput.innerHTML = `
+        <div style="animation: fadeIn 0.4s ease; text-align: left;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 8px;">
+            <strong style="color: #1f2937; font-size: 15px;">📝 Penyelesaian Langkah Demi Langkah:</strong>
+            ${formatKondisi}
+          </div>
+          
+          <div style="background: #f8fafc; padding: 12px; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 15px;">
+            ${langkahTeks}
+          </div>
+
+          <div style="background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-weight: 500; font-size: 14px;">Hasil Akhir Dari ${basis}<sup>${pangkat}</sup> :</span>
+            <span style="font-size: 22px; font-weight: 800; font-family: 'JetBrains Mono', monospace;">
+              ${hasil % 1 !== 0 ? hasil.toFixed(4) : hasil}
+            </span>
+          </div>
+        </div>
+      `;
+    }
+
+    // Pasangkan Event Listener pada Tombol Utama
+    btnHitung.addEventListener('click', jalankanHitung);
+
+    // Aktifkan Fungsi Tombol "Contoh Cepat" agar Interaktif Saat Di-klik
+    document.querySelectorAll('.qe-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const basisBawaan = this.getAttribute('data-basis');
+        const pangkatBawaan = this.getAttribute('data-pangkat');
+        
+        inputBasis.value = basisBawaan;
+        inputPangkat.value = pangkatBawaan;
+        
+        // Jalankan kalkulasi otomatis
+        jalankanHitung();
+        
+        // Scroll halus langsung mengarah otomatis ke area kalkulator hasil
+        document.getElementById('kalkulator').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
