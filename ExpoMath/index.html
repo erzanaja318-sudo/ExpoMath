@@ -105,14 +105,38 @@
       <div class="section-header">
         <span class="section-badge">📚 Materi</span>
         <h2 class="section-title">Fungsi Eksponensial a<sup>n</sup></h2>
-        <p class="section-desc">Tiga kondisi utama dalam menghitung fungsi eksponensial berdasarkan nilai pangkat <em>n</em>.</p>
+        <p class="section-desc">Pemahaman mendalam mengenai konsep, bentuk umum, sifat, dan karakteristik fungsi eksponensial dalam matematika.</p>
       </div>
 
-      <div class="definition-box">
+      <div class="definition-box" style="margin-bottom: 25px;">
         <div class="def-icon">📌</div>
         <div class="def-content">
-          <h3>Definisi</h3>
-          <p>Fungsi eksponensial <strong>f(n) = a<sup>n</sup></strong> didefinisikan sebagai perkalian berulang bilangan basis <em>a</em> sebanyak <em>n</em> kali. Nilai pangkat <em>n</em> menentukan cara perhitungan yang digunakan.</p>
+          <h3>Pengertian & Bentuk Umum</h3>
+          <p style="margin-bottom: 12px;">
+            Fungsi eksponensial adalah fungsi non-linear yang memetakan setiap bilangan real <em>x</em> ke nilai <strong>a<sup>x</sup></strong>, di mana <strong>a</strong> merupakan konstanta bilangan positif yang bertindak sebagai <strong>basis (bilangan pokok)</strong>, dan variabel bebasnya bertindak sebagai <strong>eksponen (pangkat)</strong>.
+          </p>
+          <p>Secara matematis, bentuk umum fungsi eksponensial dituliskan sebagai:</p>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: bold; color: #4f46e5; background: #f1f5f9; padding: 10px; border-radius: 6px; text-align: center; margin: 12px 0;">
+            f(n) = a<sup>n</sup> &nbsp;atau&nbsp; y = a<sup>n</sup>
+          </div>
+          <h4 style="margin-top: 15px; margin-bottom: 5px; color: #1e293b;">⚠️ Syarat Penting Basis (a):</h4>
+          <ul style="margin-left: 20px; font-size: 14px; line-height: 1.6;">
+            <li><strong>a &gt; 0</strong> (Basis harus berupa bilangan positif agar menghasilkan nilai riil yang konsisten).</li>
+            <li><strong>a ≠ 1</strong> (Jika basis bertingkat 1, maka nilainya akan selalu konstan 1<sup>n</sup> = 1, sehingga tidak lagi membentuk kurva eksponensial).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="definition-box" style="background: #f8fafc; border-left-color: #10b981; margin-bottom: 35px;">
+        <div class="def-icon" style="background: #e6f4ea; color: #10b981;">📈</div>
+        <div class="def-content">
+          <h3>Karakteristik & Sifat Grafik</h3>
+          <p style="margin-bottom: 8px;">Pertumbuhan fungsi eksponensial sangat berbeda dengan pertumbuhan linear. Berdasarkan nilai basisnya, grafik eksponensial dibagi menjadi dua kategori utama:</p>
+          <ul style="margin-left: 20px; font-size: 14px; line-height: 1.6; margin-bottom: 10px;">
+            <li><strong>Pertumbuhan Eksponensial (Exponential Growth):</strong> Terjadi jika nilai <strong>a &gt; 1</strong>. Grafik akan melengkung naik secara ekstrem dari kiri bawah ke kanan atas. Contoh fenomena nyata: Pembelahan sel biologi, pertumbuhan populasi, atau bunga majemuk perbankan.</li>
+            <li><strong>Peluruhan Eksponensial (Exponential Decay):</strong> Terjadi jika nilai basis berupa pecahan antara nol dan satu <strong>(0 &lt; a &lt; 1)</strong>. Grafik akan melengkung turun secara ekstrem dari kiri atas ke kanan bawah. Contoh nyata: Peluruhan zat radioaktif atau penyusutan nilai aset ekonomi.</li>
+          </ul>
+          <p style="font-size: 13px; color: #64748b; font-style: italic;">*Catatan: Grafik fungsi eksponensial tidak akan pernah menyentuh sumbu X (nilai hasil y selalu &gt; 0). Garis sumbu X ini bertindak sebagai Asimtot Datar.</p>
         </div>
       </div>
 
@@ -374,18 +398,29 @@
       const basis = parseFloat(inputBasis.value);
       const pangkat = parseInt(inputPangkat.value);
 
+      // Validasi proteksi input kosong
       if (isNaN(basis) || isNaN(pangkat)) {
         calcOutput.innerHTML = `
-          <div style="color: #ef4444; padding: 15px; background: #fee2e2; border-left: 4px solid #ef4444; border-radius: 6px;">
-            ⚠️ Mohon masukkan nilai basis dan pangkat terlebih dahulu!
+          <div style="color: #ef4444; padding: 15px; background: #fee2e2; border-left: 4px solid #ef4444; border-radius: 6px; font-weight: 500;">
+            ⚠️ Gagal: Mohon isi angka bilangan basis (a) dan nilai pangkat (n) terlebih dahulu!
           </div>`;
         return;
       }
 
+      // Validasi bentuk tak tentu matematika
       if (basis === 0 && pangkat === 0) {
         calcOutput.innerHTML = `
-          <div style="color: #b45309; padding: 15px; background: #fef3c7; border-left: 4px solid #d97706; border-radius: 6px;">
-            <strong>Hasil: Tidak Terdefinisi</strong><br/>0<sup>0</sup> merupakan bentuk tak tentu dalam matematika.
+          <div style="color: #b45309; padding: 15px; background: #fef3c7; border-left: 4px solid #d97706; border-radius: 6px; text-align: left;">
+            <strong style="font-size: 16px;">Hasil: Tidak Terdefinisi</strong><br/>
+            <p style="margin-top: 5px; font-size: 14px; color: #78350f; line-height: 1.5;"> Di dalam sistem aturan matematika diskrit, nilai 0 pangkat 0 (0<sup>0</sup>) termasuk ke dalam bentuk tak tentu (indeterminate form).</p>
+          </div>`;
+        return;
+      }
+      if (basis === 0 && pangkat < 0) {
+        calcOutput.innerHTML = `
+          <div style="color: #ef4444; padding: 15px; background: #fee2e2; border-left: 4px solid #ef4444; border-radius: 6px; text-align: left;">
+            <strong style="font-size: 16px;">Hasil: Error (Infinity)</strong><br/>
+            <p style="margin-top: 5px; font-size: 14px; line-height: 1.5;">Pangkat negatif dari angka nol memicu rumus pembagian dengan nol (1 / 0<sup>n</sup>) yang hasilnya bernilai tak hingga / tidak terdefinisi.</p>
           </div>`;
         return;
       }
@@ -393,20 +428,34 @@
       let hasil = 1;
       let langkahTeks = '';
       let statusKondisi = '';
+      let warnaTag = '';
 
+      // KONDISI 1: Pangkat Nol (n = 0)
       if (pangkat === 0) {
         hasil = 1;
         statusKondisi = 'Kondisi 1: Pangkat Nol';
-        langkahTeks = `Setiap bilangan bukan nol jika dipangkatkan dengan 0 hasilnya adalah <strong>1</strong>.<br/>$$\\Rightarrow ${basis}^{0} = 1$$`;
-      } else if (pangkat > 0) {
+        warnaTag = '#0369a1; background: #e0f2fe;';
+        langkahTeks = `Berdasarkan aksioma dasar fungsi eksponensial, setiap bilangan pokok bukan nol yang dipangkatkan dengan 0 akan selalu bernilai konstan 1.<br/><br/>
+        Hasil Perhitungan:<br/>
+        ➔ ${basis}⁰ = 1`;
+      } 
+      // KONDISI 2: Pangkat Positif (n > 0)
+      else if (pangkat > 0) {
         let arrayKali = [];
         for (let i = 0; i < pangkat; i++) {
           hasil *= basis;
           arrayKali.push(basis < 0 ? `(${basis})` : basis);
         }
         statusKondisi = 'Kondisi 2: Pangkat Positif';
-        langkahTeks = `Mengalikan basis <strong>${basis}</strong> sebanyak <strong>${pangkat}</strong> kali:<br/>$$= ${arrayKali.join(' \\times ')}$$<br/>$$= ${hasil}$$`;
-      } else {
+        warnaTag = '#15803d; background: #dcfce7;';
+        langkahTeks = `Mengalikan bilangan pokok basis ${basis} secara berulang sebanyak ${pangkat} kali:<br/><br/>
+        Rumus Perkalian:<br/>
+        = ${arrayKali.join(' x ')}<br/><br/>
+        Hasil Akhir Penjumlahan Berulang:<br/>
+        = ${hasil}`;
+      } 
+      // KONDISI 3: Pangkat Negatif (n < 0)
+      else {
         let pangkatPositif = Math.abs(pangkat);
         let arrayKali = [];
         let penyebut = 1;
@@ -416,27 +465,48 @@
         }
         hasil = 1 / penyebut;
         statusKondisi = 'Kondisi 3: Pangkat Negatif';
-        langkahTeks = `Menggunakan sifat $$a^{-n} = \\frac{1}{a^n}$$<br/>$$${basis}^{${pangkat}} = \\frac{1}{${basis}^{${pangkatPositif}}}$$<br/>$$= \\frac{1}{${arrayKali.join(' \\times ')}}$$<br/>$$= \\frac{1}{${penyebut}}$$ <br/>$$= ${hasil % 1 !== 0 ? hasil.toFixed(4) : hasil}$$`;
+        warnaTag = '#e11d48; background: #ffeeec;';
+        
+        let hasilFormat desimal = hasil % 1 !== 0 ? hasil.toFixed(4) : hasil;
+        
+        langkahTeks = `Menggunakan hukum invers pangkat negatif pecahan a⁻ⁿ = 1 / aⁿ<br/><br/>
+        Transformasi Rumus Pangkat:<br/>
+        ${basis}⁻ᵖᵃⁿᵍᵏᵃᵗ = 1 / (${basis}<sup>${pangkatPositif}</sup>)<br/><br/>
+        Langkah Jabaran Penyebut:<br/>
+        = 1 / (${arrayKali.join(' x ')})<br/>
+        = 1 / ${penyebut}<br/><br/>
+        Hasil Konversi Desimal:<br/>
+        = ${hasilFormat desimal}`;
       }
 
+      // Render tampilan box output estetik bebas dari tanda $
       calcOutput.innerHTML = `
-        <div style="text-align: left; background: #fff; padding: 20px; border-radius: 8px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
-          <div style="margin-bottom: 10px; font-size: 12px; font-weight: bold; color: #4f46e5; text-transform: uppercase;">
-            ${statusKondisi}
+        <div style="text-align: left; background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: inset 0 2px 5px rgba(0,0,0,0.03); animation: fadeIn 0.3s ease;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 10px;">
+            <strong style="color: #1e293b; font-size: 14px;">📝 Jalur Langkah Penyelesaian:</strong>
+            <span style="padding: 3px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; ${warnaTag}">
+              ${statusKondisi}
+            </span>
           </div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 15px;">
+          
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.6; color: #475569; margin-bottom: 18px; background: #f8fafc; padding: 12px; border-radius: 6px; border: 1px solid #f1f5f9;">
             ${langkahTeks}
           </div>
-          <div style="background: #4f46e5; color: white; padding: 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 14px;">Hasil Akhir:</span>
-            <span style="font-size: 20px; font-weight: bold; font-family: 'JetBrains Mono', monospace;">${hasil % 1 !== 0 ? hasil.toFixed(4) : hasil}</span>
+          
+          <div style="background: linear-gradient(135deg, #4f46e5, #7c3aed); color: #ffffff; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);">
+            <span style="font-size: 14px; font-weight: 500;">Hasil Akhir Dari ${basis}<sup>${pangkat}</sup> :</span>
+            <span style="font-size: 22px; font-weight: 800; font-family: 'JetBrains Mono', monospace;">
+              ${hasil % 1 !== 0 ? hasil.toFixed(4) : hasil}
+            </span>
           </div>
         </div>
       `;
     }
 
+    // Sambungkan fungsi ke tombol pemicu utama
     btnHitung.addEventListener('click', hitungEksponensial);
 
+    // Sambungkan fungsi ke barisan contoh cepat instan
     document.querySelectorAll('.qe-btn').forEach(btn => {
       btn.addEventListener('click', function() {
         inputBasis.value = this.getAttribute('data-basis');
