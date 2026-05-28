@@ -1,207 +1,201 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExpoMath - Kalkulator Eksponensial Interaktif</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-color: #f3f4f6;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .container {
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 100%;
-            padding: 30px;
-        }
-        h1 {
-            color: #4f46e5;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        p.subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 25px;
-            font-size: 14px;
-        }
-        .input-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: #4b5563;
-        }
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #e5e7eb;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: border-color 0.2s;
-        }
-        input[type="number"]:focus {
-            border-color: #4f46e5;
-            outline: none;
-        }
-        button {
-            width: 100%;
-            background-color: #4f46e5;
-            color: white;
-            border: none;
-            padding: 12px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #4338ca;
-        }
-        .result-box {
-            margin-top: 25px;
-            padding: 15px;
-            background-color: #eef2ff;
-            border-left: 5px solid #4f46e5;
-            border-radius: 4px;
-            display: none;
-        }
-        .result-box h3 {
-            color: #4338ca;
-            margin-bottom: 8px;
-        }
-        .steps {
-            background: #fff;
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid #e5e7eb;
-            margin-top: 10px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 14px;
-            white-color: pre-wrap;
-            line-height: 1.5;
-        }
-        .edu-section {
-            margin-top: 30px;
-            border-top: 1px solid #e5e7eb;
-            padding-top: 20px;
-            font-size: 14px;
-            color: #4b5563;
-            line-height: 1.6;
-        }
-        .edu-section h4 {
-            color: #1f2937;
-            margin-bottom: 8px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExpoMath – Fungsi Eksponensial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="container">
-    <h1>ExpoMath</h1>
-    <p class="subtitle">Belajar Fungsi Eksponensial Secara Interaktif</p>
-
-    <div class="input-group">
-        <label for="basis">Masukkan Nilai Basis ($a$):</label>
-        <input type="number" id="basis" placeholder="Contoh: 2" required>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-icon">ε</span>
+        <span class="logo-text">ExpoMath</span>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+        <li><a href="#materi" class="nav-link">Materi</a></li>
+        <li><a href="#kalkulator" class="nav-link">Kalkulator</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="input-group">
-        <label for="pangkat">Masukkan Nilai Pangkat ($n$):</label>
-        <input type="number" id="pangkat" placeholder="Contoh: 3" required>
+  <section class="hero" id="beranda">
+    <div class="hero-bg">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+      <div class="hero-grid"></div>
     </div>
-
-    <button type="button" onclick="hitungEksponensial()">Hitung Penyelesaian</button>
-
-    <div class="result-box" id="kotakHasil">
-        <h3>Hasil Akhir: <span id="hasilAngka">0</span></h3>
-        <p><strong>Cara Perhitungan:</strong></p>
-        <div class="steps" id="langkahHitung"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>✦</span> Matematika Diskrit
+      </div>
+      <h1 class="hero-title">
+        <span class="title-main">ExpoMath</span>
+        <span class="title-sub">Belajar Fungsi Eksponensial<br/>Secara Interaktif</span>
+      </h1>
+      <p class="hero-tagline">
+        Media pembelajaran modern untuk memahami perpangkatan
+        <strong>a<sup>n</sup></strong> langkah demi langkah — dari pangkat nol, positif, hingga negatif.
+      </p>
+      <p class="hero-creator">Dibuat oleh: <strong>Muhammad Erzan Divana Herman</strong></p>
+      <div class="hero-cta">
+        <a href="#materi" class="btn btn-primary">
+          <span>📖</span> Pelajari Materi
+        </a>
+        <a href="#kalkulator" class="btn btn-secondary">
+          <span>🧮</span> Coba Kalkulator
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Kondisi</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Contoh Soal</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Interaktif</span>
+        </div>
+      </div>
     </div>
-
-    <div class="edu-section">
-        <h4>Apa itu Fungsi Eksponensial?</h4>
-        <p>Fungsi eksponensial adalah fungsi matematika yang dinyatakan dalam bentuk:</p>
-        <p style="text-align: center; font-weight: bold; margin: 8px 0; color: #4f46e5;">$f(x) = a^x$</p>
-        <p>Di mana <strong>$a$</strong> disebut sebagai <strong>basis</strong> (bilangan pokok) yang syaratnya harus lebih besar dari 0 ($a > 0$) dan tidak boleh sama dengan 1 ($a \neq 1$). Sedangkan variabel <strong>$x$</strong> bertindak sebagai <strong>eksponen</strong> atau pangkat.</p>
-        <p style="margin-top: 8px;">Berbeda dengan fungsi linear yang bertambah secara konstan, fungsi eksponensial mengalami kenaikan secara ekstrem dan melipatgandakan nilainya seiring bertambahnya nilai pangkat.</p>
+    <div class="hero-visual">
+      <div class="formula-card">
+        <div class="formula-header">Fungsi Eksponensial</div>
+        <div class="formula-body">
+          <div class="formula-line">f(n) = a<sup>n</sup></div>
+          <div class="formula-cases">
+            <div class="case-row">
+              <span class="case-cond">n = 0</span>
+              <span class="case-arrow">→</span>
+              <span class="case-result">1</span>
+            </div>
+            <div class="case-row">
+              <span class="case-cond">n &gt; 0</span>
+              <span class="case-arrow">→</span>
+              <span class="case-result">a × a × … × a</span>
+            </div>
+            <div class="case-row">
+              <span class="case-cond">n &lt; 0</span>
+              <span class="case-arrow">→</span>
+              <span class="case-result">1 / a<sup>|n|</sup></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </section>
 
-<script>
-function hitungEksponensial() {
-    // 1. Mengambil nilai dari kotak input HTML
-    const basis = parseFloat(document.getElementById('basis').value);
-    const pangkat = parseInt(document.getElementById('pangkat').value);
-    
-    // Validasi jika inputan kosong
-    if (isNaN(basis) || isNaN(pangkat)) {
-        alert("Mohon masukkan angka basis dan pangkat terlebih dahulu!");
-        return;
-    }
+  <section class="section materi-section" id="materi">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">📚 Materi</span>
+        <h2 class="section-title">Fungsi Eksponensial a<sup>n</sup></h2>
+        <p class="section-desc">Tiga kondisi utama dalam menghitung fungsi eksponensial berdasarkan nilai pangkat <em>n</em>.</p>
+      </div>
 
-    let hasil = 1;
-    let urutanPerkalian = [];
-    let teksLangkah = "";
+      <div class="definition-box">
+        <div class="def-icon">📌</div>
+        <div class="def-content">
+          <h3>Definisi</h3>
+          <p>Fungsi eksponensial <strong>f(n) = a<sup>n</sup></strong> didefinisikan sebagai perkalian berulang bilangan basis <em>a</em> sebanyak <em>n</em> kali. Nilai pangkat <em>n</em> menentukan cara perhitungan yang digunakan.</p>
+        </div>
+      </div>
 
-    // 2. Logika Matematika sesuai Aturan Eksponen
-    if (pangkat > 0) {
-        // Pangkat Positif: Mengalikan basis sebanyak n kali
-        for (let i = 0; i < pangkat; i++) {
-            hasil *= basis;
-            urutanPerkalian.push(basis);
-        }
-        teksLangkah = `${basis}^${pangkat} artinya mengalikan bilangan ${basis} sebanyak ${pangkat} kali:\n\n` + 
-                      `= ${urutanPerkalian.join(' x ')}\n` +
-                      `= ${hasil}`;
+      <div class="materi-grid">
 
-    } else if (pangkat === 0) {
-        // Pangkat Nol: Semua bilangan (kecuali 0) dipangkatkan 0 hasilnya 1
-        hasil = 1;
-        teksLangkah = `${basis}^0 = 1\n\nBerdasarkan sifat eksponensial, setiap bilangan bukan nol yang dipangkatkan dengan 0 akan selalu menghasilkan nilai 1.`;
+        <div class="materi-card card-zero fade-in">
+          <div class="card-header">
+            <div class="card-badge">Kondisi 1</div>
+            <div class="card-icon">0️⃣</div>
+          </div>
+          <h3 class="card-title">Pangkat Nol</h3>
+          <div class="card-formula">a<sup>0</sup> = 1</div>
+          <div class="card-condition">
+            <span class="condition-label">Syarat:</span> n = 0
+          </div>
+          <p class="card-desc">
+            Berdasarkan definisi matematika, <strong>setiap bilangan bukan nol</strong> yang dipangkatkan 0 selalu menghasilkan nilai <strong>1</strong>. Ini adalah aksioma dasar dalam teori eksponen.
+          </p>
+          <div class="card-examples">
+            <div class="example-title">✦ Contoh Soal</div>
+            <div class="example-list">
+              <div class="example-item">
+                <span class="ex-prob">2<sup>0</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-ans">1</span>
+              </div>
+              <div class="example-item">
+                <span class="ex-prob">7<sup>0</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-ans">1</span>
+              </div>
+              <div class="example-item">
+                <span class="ex-prob">(-5)<sup>0</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-ans">1</span>
+              </div>
+              <div class="example-item">
+                <span class="ex-prob">100<sup>0</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-ans">1</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-note">
+            ⚠️ Catatan: 0<sup>0</sup> bersifat tidak terdefinisi (indeterminate form)
+          </div>
+        </div>
 
-    } else {
-        // Pangkat Negatif: Menggunakan sifat a^-n = 1 / a^n
-        const pangkatPositif = Math.abs(pangkat);
-        for (let i = 0; i < pangkatPositif; i++) {
-            hasil *= basis;
-            urutanPerkalian.push(basis);
-        }
-        const hasilAkhirNegatif = 1 / hasil;
-        teksLangkah = `${basis}^(${pangkat}) menggunakan sifat pangkat negatif a^-n = 1 / a^n:\n\n` +
-                      `= 1 / (${basis}^${pangkatPositif})\n` +
-                      `= 1 / (${urutanPerkalian.join(' x ')})\n` +
-                      `= 1 / ${hasil}\n` +
-                      `= ${hasilAkhirNegatif.toFixed(4)}`;
-        hasil = hasilAkhirNegatif;
-    }
-
-    // 3. Menampilkan Hasil ke Layar Website
-    document.getElementById('hasilAngka').innerText = pangkat < 0 ? hasil.toFixed(4) : hasil;
-    document.getElementById('langkahHitung').innerText = teksLangkah;
-    
-    // Membuka kotak hasil agar terlihat di layar
-    document.getElementById('kotakHasil').style.display = 'block';
-}
-</script>
-
-</body>
-</html>
+        <div class="materi-card card-positive fade-in">
+          <div class="card-header">
+            <div class="card-badge">Kondisi 2</div>
+            <div class="card-icon">➕</div>
+          </div>
+          <h3 class="card-title">Pangkat Positif</h3>
+          <div class="card-formula">a<sup>n</sup> = a × a × … × a</div>
+          <div class="card-condition">
+            <span class="condition-label">Syarat:</span> n &gt; 0
+          </div>
+          <p class="card-desc">
+            Apabila pangkat <em>n</em> bernilai positif, maka <strong>a<sup>n</sup></strong> dihitung dengan mengalikan basis <em>a</em> dengan dirinya sendiri sebanyak <em>n</em> kali secara berulang.
+          </p>
+          <div class="card-examples">
+            <div class="example-title">✦ Contoh Soal</div>
+            <div class="example-list">
+              <div class="example-item">
+                <span class="ex-prob">2<sup>3</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-calc">2×2×2</span>
+                <span class="ex-ans">= 8</span>
+              </div>
+              <div class="example-item">
+                <span class="ex-prob">3<sup>4</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-calc">3×3×3×3</span>
+                <span class="ex-ans">= 81</span>
+              </div>
+              <div class="example-item">
+                <span class="ex-prob">5<sup>2</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-calc">5×5</span>
+                <span class="ex-ans">= 25</span>
+              </div>
+              <div class="example-item">
+                <span class="ex-prob">(-2)<sup>3</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class
