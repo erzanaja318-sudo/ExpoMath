@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExpoMath – Fungsi Eksponensial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-icon">ε</span>
+        <span class="logo-text">ExpoMath</span>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+        <li><a href="#materi" class="nav-link">Materi</a></li>
+        <li><a href="#kalkulator" class="nav-link">Kalkulator</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO / BERANDA ===== -->
+  <section class="hero" id="beranda">
+    <div class="hero-bg">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>✦</span> Matematika Diskrit
+      </div>
+      <h1 class="hero-title">
+        <span class="title-main">ExpoMath</span>
+        <span class="title-sub">Belajar Fungsi Eksponensial<br/>Secara Interaktif</span>
+      </h1>
+      <p class="hero-tagline">
+        Media pembelajaran modern untuk memahami perpangkatan
+        <strong>a<sup>n</sup></strong> langkah demi langkah — dari pangkat nol, positif, hingga negatif.
+      </p>
+      <p class="hero-creator">Dibuat oleh: <strong>Muhammad Erzan Divana Herman</strong></p>
+      <div class="hero-cta">
+        <a href="#materi" class="btn btn-primary">
+          <span>📖</span> Pelajari Materi
+        </a>
+        <a href="#kalkulator" class="btn btn-secondary">
+          <span>🧮</span> Coba Kalkulator
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Kondisi</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Contoh Soal</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Interaktif</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="formula-card">
+        <div class="formula-header">Fungsi Eksponensial</div>
+        <div class="formula-body">
+          <div class="formula-line">f(n) = a<sup>n</sup></div>
+          <div class="formula-cases">
+            <div class="case-row">
+              <span class="case-cond">n = 0</span>
+              <span class="case-arrow">→</span>
+              <span class="case-result">1</span>
+            </div>
+            <div class="case-row">
+              <span class="case-cond">n &gt; 0</span>
+              <span class="case-arrow">→</span>
+              <span class="case-result">a × a × … × a</span>
+            </div>
+            <div class="case-row">
+              <span class="case-cond">n &lt; 0</span>
+              <span class="case-arrow">→</span>
+              <span class="case-result">1 / a<sup>|n|</sup></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MATERI ===== -->
+  <section class="section materi-section" id="materi">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">📚 Materi</span>
+        <h2 class="section-title">Fungsi Eksponensial a<sup>n</sup></h2>
+        <p class="section-desc">Tiga kondisi utama dalam menghitung fungsi eksponensial berdasarkan nilai pangkat <em>n</em>.</p>
+      </div>
+
+      <!-- Definisi Umum -->
+      <div class="definition-box">
+        <div class="def-icon">📌</div>
+        <div class="def-content">
+          <h3>Definisi</h3>
+          <p>Fungsi eksponensial <strong>f(n) = a<sup>n</sup></strong> didefinisikan sebagai perkalian berulang bilangan basis <em>a</em> sebanyak <em>n</em> kali. Nilai pangkat <em>n</em> menentukan cara perhitungan yang digunakan.</p>
+        </div>
+      </div>
+
+      <!-- 3 Cards Materi -->
+      <div class="materi-grid">
+
+        <!-- Card 1: Pangkat Nol -->
+        <div class="materi-card card-zero fade-in">
+          <div class="card-header">
+            <div class="card-badge">Kondisi 1</div>
+            <div class="card-icon">0️⃣</div>
+          </div>
+          <h3 class="card-title">Pangkat Nol</h3>
+          <div class="card-formula">a<sup>0</sup> = 1</div>
+          <div class="card-condition">
+            <span class="condition-label">Syarat:</span> n = 0
+          </div>
+          <p class="card-desc">
+            Berdasarkan definisi matematika, <strong>setiap bilangan bukan nol</strong> yang dipangkatkan 0 selalu menghasilkan nilai <strong>1</strong>. Ini adalah aksioma dasar dalam teori eksponen.
+          </p>
+          <div class="card-examples">
+            <div class="example-title">✦ Contoh Soal</div>
+            <div class="example-list">
+              <div class="example-item">
+                <span class="ex-prob">2<sup>0</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-ans">1</span>
+              </div>
+              <div class="example-item">
+                <span class="ex-prob">7<sup>0</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-ans">1</span>
+              </div>
+              <div class="example-item">
+                <span class="ex-prob">(-5)<sup>0</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-ans">1</span>
+              </div>
+              <div class="example-item">
+                <span class="ex-prob">100<sup>0</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-ans">1</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-note">
+            ⚠️ Catatan: 0<sup>0</sup> bersifat tidak terdefinisi (indeterminate form)
+          </div>
+        </div>
+
+        <!-- Card 2: Pangkat Positif -->
+        <div class="materi-card card-positive fade-in">
+          <div class="card-header">
+            <div class="card-badge">Kondisi 2</div>
+            <div class="card-icon">➕</div>
+          </div>
+          <h3 class="card-title">Pangkat Positif</h3>
+          <div class="card-formula">a<sup>n</sup> = a × a × … × a</div>
+          <div class="card-condition">
+            <span class="condition-label">Syarat:</span> n &gt; 0
+          </div>
+          <p class="card-desc">
+            Apabila pangkat <em>n</em> bernilai positif, maka <strong>a<sup>n</sup></strong> dihitung dengan mengalikan basis <em>a</em> dengan dirinya sendiri sebanyak <em>n</em> kali secara berulang.
+          </p>
+          <div class="card-examples">
+            <div class="example-title">✦ Contoh Soal</div>
+            <div class="example-list">
+              <div class="example-item">
+                <span class="ex-prob">2<sup>3</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-calc">2×2×2</span>
+                <span class="ex-ans">= 8</span>
+              </div>
+              <div class="example-item">
+                <span class="ex-prob">3<sup>4</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-calc">3×3×3×3</span>
+                <span class="ex-ans">= 81</span>
+              </div>
+              <div class="example-item">
+                <span class="ex-prob">5<sup>2</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-calc">5×5</span>
+                <span class="ex-ans">= 25</span>
+              </div>
+              <div class="example-item">
+                <span class="ex-prob">(-2)<sup>3</sup></span>
+                <span class="ex-arrow">→</span>
+                <span class="ex-calc">(-2)×(-2)×(-2)</span>
+                <span class="ex-ans">= -8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Pangkat Negatif -->
+        <div class="materi-card card-negative fade-in">
+          <div class="card-header">
+            <div class="card-badge">Kondisi 3</div>
+            <div class="card-icon">➖</div>
+          </div>
+          <h3 class="card-title">Pangkat Negatif</h3>
+          <div class="card-formula">a<sup>-n</sup> = 1 / a<sup>n</sup></div>
+          <div class="card-condition">
+            <span class="condition-label">Syarat:</span> n &lt; 0
+          </div>
+          <p class="card-desc">
+            Apabila pangkat <em>n</em> bernilai negatif, maka hasilnya diubah menjadi bentuk <strong>pecahan</strong>: pembilang 1 dibagi hasil perpangkatan positifnya.
+          </p>
+          <div class="card-examples">
+            <div class="example-title">✦ Contoh Soal</div>
+            <div class="example-list">
+              <div class="example-item col">
+                <span class="ex-prob">2<sup>-3</sup></span>
+                <span class="ex-steps">= 1/2<sup>3</sup> = 1/(2×2×2) = 1/8</span>
+                <span class="ex-ans">= 0.125</span>
+              </div>
+              <div class="example-item col">
+                <span class="ex-prob">3<sup>-2</sup></span>
+                <span class="ex-steps">= 1/3<sup>2</sup> = 1/(3×3) = 1/9</span>
+                <span class="ex-ans">≈ 0.111</span>
+              </div>
+              <div class="example-item col">
+                <span class="ex-prob">5<sup>-1</sup></span>
+                <span class="ex-steps">= 1/5<sup>1</sup> = 1/5</span>
+                <span class="ex-ans">= 0.2</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-note">
+            ⚠️ Catatan: Jika basis a = 0, maka 0<sup>-n</sup> tidak terdefinisi
+          </div>
+        </div>
+
+      </div><!-- end materi-grid -->
+
+      <!-- Ringkasan Tabel -->
+      <div class="summary-table-wrap fade-in">
+        <div class="summary-title">📊 Ringkasan Kondisi Fungsi Eksponensial</div>
+        <div class="table-scroll">
+          <table class="summary-table">
+            <thead>
+              <tr>
+                <th>Kondisi</th>
+                <th>Syarat</th>
+                <th>Rumus</th>
+                <th>Contoh</th>
+                <th>Hasil</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge-zero">Pangkat Nol</span></td>
+                <td>n = 0</td>
+                <td>a<sup>0</sup> = 1</td>
+                <td>5<sup>0</sup></td>
+                <td class="result-cell">1</td>
+              </tr>
+              <tr>
+                <td><span class="badge-pos">Pangkat Positif</span></td>
+                <td>n &gt; 0</td>
+                <td>a × a × … (n kali)</td>
+                <td>2<sup>4</sup></td>
+                <td class="result-cell">16</td>
+              </tr>
+              <tr>
+                <td><span class="badge-neg">Pangkat Negatif</span></td>
+                <td>n &lt; 0</td>
+                <td>1 / a<sup>|n|</sup></td>
+                <td>2<sup>-3</sup></td>
+                <td class="result-cell">0.125</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== KALKULATOR ===== -->
+  <section class="section kalkulator-section" id="kalkulator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">🧮 Kalkulator</span>
+        <h2 class="section-title">Eksponensial Calculator</h2>
+        <p class="section-desc">Masukkan bilangan basis dan pangkat, lalu lihat langkah penyelesaian secara otomatis.</p>
+      </div>
+
+      <div class="calc-wrapper">
+        <div class="calc-card">
+          <!-- Input Area -->
+          <div class="calc-inputs">
+            <div class="input-group">
+              <label for="inputBasis" class="input-label">
+                <span class="label-icon">🔢</span>
+                Bilangan Basis (a)
+              </label>
+              <input type="number" id="inputBasis" class="calc-input" placeholder="Contoh: 2" step="any" />
+            </div>
+            <div class="input-divider">
+              <span class="divider-text">^</span>
+            </div>
+            <div class="input-group">
+              <label for="inputPangkat" class="input-label">
+                <span class="label-icon">🔼</span>
+                Nilai Pangkat (n)
+              </label>
+              <input type="number" id="inputPangkat" class="calc-input" placeholder="Contoh: 3" step="1" />
+            </div>
+          </div>
+
+          <!-- Hitung Button -->
+          <button class="btn-hitung" id="btnHitung">
+            <span class="btn-icon">⚡</span>
+            Hitung Penyelesaian
+          </button>
+
+          <!-- Output Area -->
+          <div class="calc-output" id="calcOutput">
+            <div class="output-placeholder">
+              <div class="placeholder-icon">📐</div>
+              <p>Masukkan nilai basis dan pangkat, lalu tekan tombol <strong>Hitung Penyelesaian</strong> untuk melihat langkah-langkah perhitungan.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Contoh Cepat -->
+        <div class="quick-examples">
+          <div class="qe-title">💡 Coba Contoh Cepat</div>
+          <div class="qe-grid">
+            <button class="qe-btn" data-basis="2" data-pangkat="3">2<sup>3</sup></button>
+            <button class="qe-btn" data-basis="3" data-pangkat="4">3<sup>4</sup></button>
+            <button class="qe-btn" data-basis="5" data-pangkat="0">5<sup>0</sup></button>
+            <button class="qe-btn" data-basis="2" data-pangkat="-3">2<sup>-3</sup></button>
+            <button class="qe-btn" data-basis="4" data-pangkat="-2">4<sup>-2</sup></button>
+            <button class="qe-btn" data-basis="-2" data-pangkat="4">(-2)<sup>4</sup></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">ε</span>
+        <span class="footer-name">ExpoMath</span>
+      </div>
+      <p class="footer-text">
+        © 2026 ExpoMath — Dibuat oleh <strong>Muhammad Erzan Divana Herman</strong>.<br/>
+        Media Pembelajaran Fungsi Eksponensial Matematika Diskrit.
+      </p>
+      <div class="footer-tags">
+        <span>#MatematikaDiskrit</span>
+        <span>#FungsiEksponensial</span>
+        <span>#MediaPembelajaran</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
